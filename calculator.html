@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
+</head>
+<body>
+    <section class="container">
+       <div class="topscreen">
+            <textarea name="screen1" id="screen1"></textarea>
+            <textarea name="result" id="result"></textarea>
+       </div>
+       <div class="bottomscreen">
+            <button id="c" onclick="cleanit()">C</button>
+            <button id="arr" onclick="backspace()">&larr;</button>
+            <button id="pm" onclick="plusMinus(this)">+/-</button>
+            <button id="divide" onclick="append(this)">/</button>
+            <button id="seven" onclick="append(this)">7</button>
+            <button id="eight" onclick="append(this)">8</button>
+            <button id="nine" onclick="append(this)">9</button>
+            <button id="multiply" onclick="append(this)">*</button>
+            <button id="four" onclick="append(this)">4</button>
+            <button id="five" onclick="append(this)">5</button>
+            <button id="six" onclick="append(this)">6</button>
+            <button id="minus" onclick="append(this)">-</button>
+            <button id="one" onclick="append(this)">1</button>
+            <button id="two" onclick="append(this)">2</button>
+            <button id="three" onclick="append(this)">3</button>
+            <button id="plus" onclick="append(this)">+</button>
+            <button id="pc" onclick="append(this),calculatePercent()">%</button>
+            <button id="zero" onclick="append(this)">0</button>
+            <button id="point" onclick="append(this)">.</button>
+            <button id="equals" onclick ="evaluateResult()">=</button>
+       </div>
+    </section>
+</body>
+</html>
