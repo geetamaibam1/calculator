@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js"></script>
+    
 </head>
-<body>
+<body id="bodyTag">
     <section class="container">
        <div class="topscreen">
-            <textarea name="screen1" id="screen1"></textarea>
-            <textarea name="result" id="result"></textarea>
+            <textarea name="screen1" id="screen1" readonly></textarea>
+            <textarea name="result" id="result" readonly></textarea>
        </div>
        <div class="bottomscreen">
             <button id="c" onclick="cleanit()">C</button>
@@ -36,5 +36,6 @@
             <button id="equals" onclick ="evaluateResult()">=</button>
        </div>
     </section>
+    <script src="scripts.js"></script>
 </body>
 </html>

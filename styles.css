@@ -4,6 +4,13 @@
     box-sizing:border-box;
     font-family:'Courier New', Courier, monospace;
 }
+:root{
+    --hoverColor: rgb(126, 236, 132);
+    --green : rgb(8, 139, 36);
+    --orange: orange;
+    --blue: rgb(29, 172, 207);
+
+}
 .container{
     min-width:30%;
     width:30%;
@@ -73,14 +80,19 @@
     
 }
 #equals{
-    background-color:rgb(8, 139, 36);
+    background-color:var(--green);
     color:#fff;
 }
 #c,#arr,#pm,#divide,#multiply,#minus,#plus{
-    background-color:orange;
+    background-color:var(--orange);
+}
+#equals:hover,#c:hover,#arr:hover,#pm:hover,#divide:hover,#multiply:hover,#minus:hover,#plus:hover,
+#pc:hover,#zero:hover,#point:hover,#one:hover,#two:hover,#three:hover,#four:hover,#five:hover,#six:hover,#seven:hover,
+#eight:hover,#nine:hover{
+    background-color:var(--hoverColor);
 }
 #pc,#zero,#point,#one,#two,#three,#four,#five,#six,#seven,#eight,#nine{
-    background-color:rgb(29, 172, 207);
+    background-color:var(--blue);
 }
 @media screen and (min-width:450px){
     .container{

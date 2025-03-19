@@ -26,11 +26,13 @@ function cleanit(){
     click = 0;
 }
 function backspace(){
-    let screen1 = document.getElementById("screen1");  
+    let screen1 = document.getElementById("screen1"); 
+    let result = document.getElementById("result") ;
     let str2 = data.replace(data.charAt(data.length-1),"");
     data = str2
     screen1.innerHTML =  data;
     click = 0;
+    result.innerHTML = "";
 }
 function calculatePercent(){
     let result = "";
@@ -98,3 +100,107 @@ function evaluateResult(){
     document.getElementById("result").innerHTML = "Error";
    }
 }
+document.getElementById("bodyTag").addEventListener("keyup",function(event){
+    let r = document.querySelector(":root");
+	let rs = getComputedStyle(r);  
+	let hoverColor = rs.getPropertyValue('--hoverColor');  
+    let green = rs.getPropertyValue('--green');  
+    let orange = rs.getPropertyValue('--orange');  
+    let blue = rs.getPropertyValue('--blue');  
+    let equals = document.getElementById("equals");
+    let backspace = document.getElementById("arr");
+    let pc = document.getElementById("pc");
+    let point = document.getElementById("point");
+    let plus = document.getElementById("plus");
+    let minus = document.getElementById("minus");
+    let multiply = document.getElementById("multiply");
+    let divide = document.getElementById("divide");
+    let zero = document.getElementById("zero");
+    let one = document.getElementById("one");
+    let two = document.getElementById("two");
+    let three = document.getElementById("three");
+    let four = document.getElementById("four");
+    let five = document.getElementById("five");
+    let six = document.getElementById("six");
+    let seven = document.getElementById("seven");
+    let eight = document.getElementById("eight");
+    let nine = document.getElementById("nine");
+    
+    switch(event.key){
+        case "Backspace": backspace();
+                          backspace.style.backgroundColor = hoverColor;
+                          setTimeout(function(){backspace.style.backgroundColor = orange;},200);                         
+                          break;
+        case "=": 
+        case "Enter": equals.style.backgroundColor = hoverColor;
+                    setTimeout(function(){equals.style.backgroundColor = green;},200);
+                    evaluateResult();
+                    break;
+
+        case "%": pc.style.backgroundColor = hoverColor;
+                  setTimeout(function(){pc.style.backgroundColor = blue;},200);
+                  append(pc);
+                  calculatePercent();
+                  break;
+        case ".": point.style.backgroundColor = hoverColor;
+                    setTimeout(function(){point.style.backgroundColor = blue;},200);
+                    append(point);
+                    break;
+        case "+": plus.style.backgroundColor = hoverColor;
+                    setTimeout(function(){plus.style.backgroundColor = orange;},200);
+                    append(plus);
+                    break;
+        case "-": minus.style.backgroundColor = hoverColor;
+                setTimeout(function(){minus.style.backgroundColor = orange;},200);
+                append(minus);
+                break;
+        case "*": multiply.style.backgroundColor = hoverColor;
+                setTimeout(function(){multiply.style.backgroundColor = orange;},200);
+                append(multiply);
+                break;
+        case "/": divide.style.backgroundColor = hoverColor;
+                setTimeout(function(){divide.style.backgroundColor = orange;},200);
+                append(divide);
+                break;
+        case "0":zero.style.backgroundcolor = hoverColor;
+                setTimeout(function(){zero.style.backgroundColor = blue;},200);
+                append(zero);
+                break;
+        case "1":one.style.backgroundColor = hoverColor;
+                setTimeout(function(){one.style.backgroundColor = blue;},200);
+                append(one);
+                break;
+        case "2":two.style.backgroundColor = hoverColor;
+                setTimeout(function(){two.style.backgroundColor = blue;},200);
+                append(two);
+                break;
+        case "3":three.style.backgroundColor = hoverColor;
+                setTimeout(function(){three.style.backgroundColor = blue;},200);
+                append(three);
+                break;
+        case "4":four.style.backgroundColor = hoverColor;
+                setTimeout(function(){four.style.backgroundColor = blue;},200);
+                append(four);
+                break;
+        case "5":five.style.backgroundColor = hoverColor;
+                setTimeout(function(){five.style.backgroundColor = blue;},200);
+                append(five);
+                break;
+        case "6":six.style.backgroundColor = hoverColor;
+                setTimeout(function(){six.style.backgroundColor = blue;},200);
+                append(six);
+                break;
+        case "7":seven.style.backgroundColor = hoverColor;
+                setTimeout(function(){seven.style.backgroundColor = blue;},200);
+                append(seven);
+                break;
+        case "8":eight.style.backgroundColor = hoverColor;
+                setTimeout(function(){eight.style.backgroundColor = blue;},200);
+                append(eight);
+                break;
+        case "9":nine.style.backgroundColor = hoverColor;
+                setTimeout(function(){nine.style.backgroundColor = blue;},200);
+                append(nine);
+                break; 
+        }
+});
